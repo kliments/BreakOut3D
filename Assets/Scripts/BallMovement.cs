@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour {
 
-    private Vector3 direction;
-    private const float speed = 0.1f;
+    public float thrust;
+    public Rigidbody rb;
     // Use this for initialization
     void Start () {
-        direction = (new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f))).normalized;
+        rb = GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position += direction * speed * Time.deltaTime;
+        rb.AddForce(transform.forward * thrust);
     }
 }
