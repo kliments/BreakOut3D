@@ -6,7 +6,7 @@ public class MaintainEnergy : MonoBehaviour {
 
     public float kinematicEnergyLevel;
 
-    public float velocityThreshold = 0.1f;
+    public float velocityThreshold =2f;
 
     public string runtimeSection = "----- RUNTIME -----";
 
