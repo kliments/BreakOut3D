@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class DestroyObjects : MonoBehaviour {
 
-    public GameObject ui;
+    public GameObject points;
+    public GameObject lives;
     public GameObject ball;
     private GameObject temp;
     private Vector3 position;
-
+    
 	// Use this for initialization
 	void Start () {
         temp = null;
@@ -24,6 +25,8 @@ public class DestroyObjects : MonoBehaviour {
     {
         if(collision.gameObject.tag == "destroy")
         {
+            points.GetComponent<UpdatePointsAndLives>().points += 10;
+            points.GetComponent<UpdatePointsAndLives>().update = true;
             Destroy(collision.gameObject);
         }
     }
@@ -34,6 +37,8 @@ public class DestroyObjects : MonoBehaviour {
         {
             temp = Instantiate(ball, position, Quaternion.identity);
             temp.name = "Ball";
+            lives.GetComponent<UpdatePointsAndLives>().lives--;
+            lives.GetComponent<UpdatePointsAndLives>().update = true;
             Destroy(gameObject);
         }
     }
