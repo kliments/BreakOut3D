@@ -22,6 +22,11 @@ public class AddForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            trigger = true;
+        }
+
         if (trigger)
         {
             trigger = false;

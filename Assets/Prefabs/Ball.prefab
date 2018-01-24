@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 135016986770302770}
   - component: {fileID: 114878533775716140}
   - component: {fileID: 114137628585352714}
+  - component: {fileID: 114075482127074880}
+  - component: {fileID: 114343726751658636}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -48,7 +50,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4575643835168410
 Transform:
   m_ObjectHideFlags: 1
@@ -56,8 +58,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1179399607663338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: -4}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -1.746}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4887306217046570}
   m_Father: {fileID: 0}
@@ -143,7 +145,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 3.93
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -168,6 +170,22 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114075482127074880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179399607663338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c93383bba085a6449d44223d2e7791e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kinematicEnergyLevel: 10
+  velocityThreshold: 0.1
+  runtimeSection: '----- RUNTIME -----'
+  objectEnergy: 0
+  deltaEnergy: 0
 --- !u!114 &114137628585352714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,6 +197,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f5bb4eeb943484c9f3d740e1e88b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114343726751658636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179399607663338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fec7a392b41e447aa635443b381953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 1578993796187604, guid: 450e90a056fdf704db83f528a83e458e, type: 2}
+  ball: {fileID: 1179399607663338}
 --- !u!114 &114878533775716140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4187b37331f58eb409843248e5670242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMagnitude: 50
+  forceMagnitude: 10
   trigger: 0
 --- !u!135 &135016986770302770
 SphereCollider:

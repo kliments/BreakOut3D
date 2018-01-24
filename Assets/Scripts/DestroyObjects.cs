@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class DestroyObjects : MonoBehaviour {
 
+    public GameObject ui;
+    public GameObject ball;
+    private GameObject temp;
+    private Vector3 position;
+
 	// Use this for initialization
 	void Start () {
-		
+        temp = null;
+        position = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -19,6 +25,16 @@ public class DestroyObjects : MonoBehaviour {
         if(collision.gameObject.tag == "destroy")
         {
             Destroy(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.name == "GameOverWall" && temp==null)
+        {
+            temp = Instantiate(ball, position, Quaternion.identity);
+            temp.name = "Ball";
+            Destroy(gameObject);
         }
     }
 }
