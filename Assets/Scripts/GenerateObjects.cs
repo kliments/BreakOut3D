@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GenerateObjects : MonoBehaviour {
-
-    public GameObject prefab;
+    
+    public List<GameObject> prefab;
     private Vector3 pos;
     private float posX;
+    private int j;
 	// Use this for initialization
 	void Start () {
         posX = 0.5f;
 		for(int i=0; i<10; i++)
         {
-            GameObject obj = Instantiate(prefab, gameObject.transform.parent);
+            j = Random.Range(0, 3);
+            GameObject obj = Instantiate(prefab[j], gameObject.transform.parent);
             pos = gameObject.transform.position;
             pos.x += posX;
             posX += 0.5f;

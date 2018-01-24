@@ -14,7 +14,6 @@ public class TriggerBounce : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("OnCollisionEnter");
 
         Vector3 avgNormal = new Vector3(0,0,0);
 
@@ -27,8 +26,7 @@ public class TriggerBounce : MonoBehaviour {
         avgNormal = avgNormal.normalized * body.velocity.magnitude;
 
         body.AddForce(avgNormal, ForceMode.VelocityChange);
-
-        Debug.Log("APPLIED " + avgNormal);
+        
 
     }
 }

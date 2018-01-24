@@ -14,7 +14,7 @@ public class MoveCubeToMousePos : MonoBehaviour {
 	void Update () {
         //map the block over the mouse
         mousePos = Input.mousePosition;
-        mousePos.z = 2.47f;
+        mousePos.z = 2.9f;
         pos = Camera.main.ScreenToWorldPoint(mousePos);
         transform.position = pos;
     }
