@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33143045040133460}
   - component: {fileID: 136002451055416376}
   - component: {fileID: 23377197098168734}
+  - component: {fileID: 114833468821110182}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: destroy
@@ -83,6 +84,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000126414914856}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114833468821110182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000126414914856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9549770d9f1122148a0e2fd7859a8ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fasterBall: 0
+  smallerBall: 0
+  destroyBall: 0
 --- !u!136 &136002451055416376
 CapsuleCollider:
   m_ObjectHideFlags: 1

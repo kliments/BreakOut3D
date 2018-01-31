@@ -20,6 +20,7 @@ public class MaintainEnergy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        kinematicEnergyLevel = 5;
         this.body = GetComponent<Rigidbody>();
     }
 

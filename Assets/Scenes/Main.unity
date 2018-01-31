@@ -356,6 +356,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 232327284}
+  - component: {fileID: 232327285}
   m_Layer: 0
   m_Name: ObjectsToDestroy
   m_TagString: Untagged
@@ -388,6 +389,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &232327285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 232327283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8cfce6ee7c757041915fde4d50dfa27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list: []
 --- !u!1001 &256569498
 Prefab:
   m_ObjectHideFlags: 0
@@ -471,6 +484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9549770d9f1122148a0e2fd7859a8ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fasterBall: 0
+  smallerBall: 0
+  destroyBall: 0
 --- !u!114 &256569502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9549770d9f1122148a0e2fd7859a8ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fasterBall: 0
+  smallerBall: 0
+  destroyBall: 0
 --- !u!114 &322392933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,6 +1121,20 @@ MonoBehaviour:
   - {fileID: 1649795145239830, guid: bdc1ad555ed76794e9f1e3840f99a887, type: 2}
   - {fileID: 1228646244581208, guid: 0257332d46d355646bb2fb5184ceb0e1, type: 2}
   - {fileID: 1796021318298622, guid: 3aa17c7df697a7e4592c5ab52f1362a3, type: 2}
+--- !u!114 &651105149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 651105147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9549770d9f1122148a0e2fd7859a8ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fasterBall: 0
+  smallerBall: 0
+  destroyBall: 0
 --- !u!1 &674846846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,6 +1227,11 @@ Prefab:
         type: 2}
       propertyPath: kinematicEnergyLevel
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114878533775716140, guid: 33b2b6ec491146047b84685fee80f0be,
+        type: 2}
+      propertyPath: forceMagnitude
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33b2b6ec491146047b84685fee80f0be, type: 2}
@@ -1556,6 +1594,20 @@ MonoBehaviour:
   - {fileID: 1649795145239830, guid: bdc1ad555ed76794e9f1e3840f99a887, type: 2}
   - {fileID: 1228646244581208, guid: 0257332d46d355646bb2fb5184ceb0e1, type: 2}
   - {fileID: 1796021318298622, guid: 3aa17c7df697a7e4592c5ab52f1362a3, type: 2}
+--- !u!114 &910581755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 910581752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9549770d9f1122148a0e2fd7859a8ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fasterBall: 0
+  smallerBall: 0
+  destroyBall: 0
 --- !u!1 &916105062
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,6 +2472,20 @@ MonoBehaviour:
   - {fileID: 1649795145239830, guid: bdc1ad555ed76794e9f1e3840f99a887, type: 2}
   - {fileID: 1228646244581208, guid: 0257332d46d355646bb2fb5184ceb0e1, type: 2}
   - {fileID: 1796021318298622, guid: 3aa17c7df697a7e4592c5ab52f1362a3, type: 2}
+--- !u!114 &1793286221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793286219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9549770d9f1122148a0e2fd7859a8ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fasterBall: 0
+  smallerBall: 0
+  destroyBall: 0
 --- !u!1 &1794910403 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1796021318298622, guid: 3aa17c7df697a7e4592c5ab52f1362a3,
@@ -2457,6 +2523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9549770d9f1122148a0e2fd7859a8ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fasterBall: 0
+  smallerBall: 0
+  destroyBall: 0
 --- !u!1 &1837883682
 GameObject:
   m_ObjectHideFlags: 0

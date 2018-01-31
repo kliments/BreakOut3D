@@ -30,9 +30,15 @@ public class DestroyObjects : MonoBehaviour {
             {
                 PowerUp(collision.gameObject);
             }
+
+            else if (collision.gameObject.name.Contains("Capsule"))
+            {
+                PowerDown(collision.gameObject);
+            }
             points.GetComponent<UpdatePointsAndLives>().points += 10;
             points.GetComponent<UpdatePointsAndLives>().update = true;
             Destroy(collision.gameObject);
+
         }
     }
 
@@ -67,5 +73,36 @@ public class DestroyObjects : MonoBehaviour {
             scale += new Vector3(0.1f, 0.1f, 0.1f);
             gameObject.transform.localScale = scale;
         }
+    }
+
+    private void PowerDown(GameObject capsule)
+    {
+        if (capsule.GetComponent<PowerDownScript>().fasterBall)
+        {
+            gameObject.GetComponent<MaintainEnergy>().kinematicEnergyLevel = 20;
+            Invoke("SpeedBackToNormal", 5f);
+        }
+        else if (capsule.GetComponent<PowerDownScript>().smallerBall)
+        {
+            if(scale.x>0)
+            {
+                scale -= new Vector3(0.1f, 0.1f, 0.1f);
+                gameObject.transform.localScale = scale;
+            }
+        }
+        else if(capsule.GetComponent<PowerDownScript>().destroyBall && gameObject.name == "Ball")
+        {
+            temp = Instantiate(ball, position, Quaternion.identity);
+            temp.name = "Ball";
+            temp.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            lives.GetComponent<UpdatePointsAndLives>().lives--;
+            lives.GetComponent<UpdatePointsAndLives>().update = true;
+            Destroy(gameObject);
+        }
+    }
+
+    private void SpeedBackToNormal()
+    {
+        gameObject.GetComponent<MaintainEnergy>().kinematicEnergyLevel = 5;
     }
 }
