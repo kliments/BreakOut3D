@@ -1810,6 +1810,11 @@ Prefab:
       propertyPath: m_TagString
       value: destroy
       objectReference: {fileID: 0}
+    - target: {fileID: 65191647629387958, guid: 0257332d46d355646bb2fb5184ceb0e1,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0257332d46d355646bb2fb5184ceb0e1, type: 2}
   m_IsPrefabParent: 0
@@ -2178,6 +2183,11 @@ Prefab:
       propertyPath: m_TagString
       value: destroy
       objectReference: {fileID: 0}
+    - target: {fileID: 65191647629387958, guid: 0257332d46d355646bb2fb5184ceb0e1,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0257332d46d355646bb2fb5184ceb0e1, type: 2}
   m_IsPrefabParent: 0
@@ -2255,7 +2265,8 @@ Prefab:
       propertyPath: m_TagString
       value: destroy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65191647629387958, guid: 0257332d46d355646bb2fb5184ceb0e1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0257332d46d355646bb2fb5184ceb0e1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1658480976
@@ -2649,6 +2660,18 @@ MonoBehaviour:
   - {fileID: 1649795145239830, guid: bdc1ad555ed76794e9f1e3840f99a887, type: 2}
   - {fileID: 1228646244581208, guid: 0257332d46d355646bb2fb5184ceb0e1, type: 2}
   - {fileID: 1796021318298622, guid: 3aa17c7df697a7e4592c5ab52f1362a3, type: 2}
+--- !u!65 &2012085758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012085755}
+  m_Material: {fileID: 13400000, guid: 2395103a6bfc47e47ab4db18b1e596fb, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.000005811453}
 --- !u!1001 &2135038365
 Prefab:
   m_ObjectHideFlags: 0
