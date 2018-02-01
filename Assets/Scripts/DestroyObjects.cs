@@ -42,7 +42,7 @@ public class DestroyObjects : MonoBehaviour {
             else
             {
                 source.clip = clipObject;
-                source.Play();
+                if(!source.isPlaying) source.Play();
             }
             points.GetComponent<UpdatePointsAndLives>().points += 10;
             points.GetComponent<UpdatePointsAndLives>().update = true;
@@ -53,7 +53,7 @@ public class DestroyObjects : MonoBehaviour {
         else if(collision.gameObject.tag == "Wall")
         {
             source.clip = clipWall;
-            source.Play();
+            if (!source.isPlaying) source.Play();
         }
     }
 
@@ -62,9 +62,10 @@ public class DestroyObjects : MonoBehaviour {
         if (collider.gameObject.name == "GameOverWall" && temp == null && gameObject.name == "Ball")
         {
             source.clip = clipLifeLost;
-            source.Play();
+            if (!source.isPlaying) source.Play();
             temp = Instantiate(ball, position, Quaternion.identity);
             temp.name = "Ball";
+            temp.GetComponent<AddForce>().trigger = false;
             temp.transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
             lives.GetComponent<UpdatePointsAndLives>().lives--;
             lives.GetComponent<UpdatePointsAndLives>().update = true;
@@ -73,7 +74,7 @@ public class DestroyObjects : MonoBehaviour {
         else if(collider.gameObject.name.Contains("Cylinder"))
         {
             source.clip = clipPowerUp;
-            source.Play();
+            if (!source.isPlaying) source.Play();
             DestroyGameObject(collider.gameObject);
         }
     }
@@ -81,7 +82,7 @@ public class DestroyObjects : MonoBehaviour {
     private void PowerUp(GameObject cylinder)
     {
         source.clip = clipPowerUp;
-        source.Play();
+        if (!source.isPlaying) source.Play();
         if (cylinder.GetComponent<PowerUpScript>().multiBall)
         {
             GameObject secondBall = Instantiate(ball, gameObject.transform.position,Quaternion.identity);
@@ -92,7 +93,7 @@ public class DestroyObjects : MonoBehaviour {
         }
         else if(cylinder.GetComponent<PowerUpScript>().biggerBall)
         {
-            scale += new Vector3(0.1f, 0.1f, 0.1f);
+            scale += new Vector3(0.01f, 0.01f, 0.01f);
             gameObject.transform.localScale = scale;
         }
     }
@@ -100,17 +101,17 @@ public class DestroyObjects : MonoBehaviour {
     private void PowerDown(GameObject capsule)
     {
         source.clip = clipPowerDown;
-        source.Play();
+        if (!source.isPlaying) source.Play();
         if (capsule.GetComponent<PowerDownScript>().fasterBall)
         {
-            gameObject.GetComponent<MaintainEnergy>().kinematicEnergyLevel = 10;
+           gameObject.GetComponent<MaintainEnergy>().kinematicEnergyLevel = 20;
             Invoke("SpeedBackToNormal", 5f);
         }
         else if (capsule.GetComponent<PowerDownScript>().smallerBall)
         {
-            if(scale.x>0)
+            if(scale.x>0.01f)
             {
-                scale -= new Vector3(0.1f, 0.1f, 0.1f);
+                scale -= new Vector3(0.01f, 0.01f, 0.01f);
                 gameObject.transform.localScale = scale;
             }
         }
@@ -140,6 +141,9 @@ public class DestroyObjects : MonoBehaviour {
                 listParent.GetComponent<EndOfGame>().list.RemoveAt(i);
             }
         }
-        Destroy(obj);
+
+        StartCoroutine(obj.GetComponent<TriangleExplosion>().SplitMesh(true));
+        obj.SetActive(false);
+        Destroy(obj,2f);
     }
 }

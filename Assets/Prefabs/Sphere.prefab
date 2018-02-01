@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 135798497948512702}
   - component: {fileID: 23099561142728734}
   - component: {fileID: 114269077723647282}
+  - component: {fileID: 114730865820337700}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: destroy
@@ -99,6 +100,17 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5d77ddd0411d26140af424122c2958af, type: 2}
   - {fileID: 2100000, guid: d311c8d97f74afe47a1e93788d46ae0b, type: 2}
   - {fileID: 2100000, guid: 6cb88e3200001894cbf6fc85625a6270, type: 2}
+--- !u!114 &114730865820337700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1796021318298622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3360e2a76da85a94b8253bf51eab8565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135798497948512702
 SphereCollider:
   m_ObjectHideFlags: 1

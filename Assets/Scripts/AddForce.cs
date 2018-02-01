@@ -24,8 +24,9 @@ public class AddForce : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            transform.parent = null;
             trigger = true;
-            //forceVector = new Vector3(Random.Range(-1f, 1.1f), Random.Range(-1f, 1.1f), Random.Range(0f, 1.1f));
+            GetComponent<ForceMovement>().enabled = true;
         }
 
         if (trigger)

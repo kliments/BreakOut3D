@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23377197098168734}
   - component: {fileID: 114833468821110182}
   - component: {fileID: 114896208349410358}
+  - component: {fileID: 114651992036241324}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: destroy
@@ -85,6 +86,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000126414914856}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114651992036241324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000126414914856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3360e2a76da85a94b8253bf51eab8565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114833468821110182
 MonoBehaviour:
   m_ObjectHideFlags: 1
