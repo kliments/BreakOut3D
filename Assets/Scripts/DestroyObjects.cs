@@ -10,6 +10,9 @@ public class DestroyObjects : MonoBehaviour {
     public GameObject listParent;
     private GameObject temp;
     private Vector3 position, scale;
+
+    public AudioSource source;
+    public AudioClip clipWall, clipObject, clipPowerUp, clipPowerDown, clipLifeLost;
     
 	// Use this for initialization
 	void Start () {
@@ -36,10 +39,21 @@ public class DestroyObjects : MonoBehaviour {
             {
                 PowerDown(collision.gameObject);
             }
+            else
+            {
+                source.clip = clipObject;
+                source.Play();
+            }
             points.GetComponent<UpdatePointsAndLives>().points += 10;
             points.GetComponent<UpdatePointsAndLives>().update = true;
             DestroyGameObject(collision.gameObject);
 
+        }
+
+        else if(collision.gameObject.tag == "Wall")
+        {
+            source.clip = clipWall;
+            source.Play();
         }
     }
 
@@ -47,6 +61,8 @@ public class DestroyObjects : MonoBehaviour {
     {
         if (collider.gameObject.name == "GameOverWall" && temp == null && gameObject.name == "Ball")
         {
+            source.clip = clipLifeLost;
+            source.Play();
             temp = Instantiate(ball, position, Quaternion.identity);
             temp.name = "Ball";
             temp.transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
@@ -56,13 +72,17 @@ public class DestroyObjects : MonoBehaviour {
         }
         else if(collider.gameObject.name.Contains("Cylinder"))
         {
+            source.clip = clipPowerUp;
+            source.Play();
             DestroyGameObject(collider.gameObject);
         }
     }
 
     private void PowerUp(GameObject cylinder)
     {
-        if(cylinder.GetComponent<PowerUpScript>().multiBall)
+        source.clip = clipPowerUp;
+        source.Play();
+        if (cylinder.GetComponent<PowerUpScript>().multiBall)
         {
             GameObject secondBall = Instantiate(ball, gameObject.transform.position,Quaternion.identity);
             secondBall.name = "SecondBall";
@@ -78,6 +98,8 @@ public class DestroyObjects : MonoBehaviour {
 
     private void PowerDown(GameObject capsule)
     {
+        source.clip = clipPowerDown;
+        source.Play();
         if (capsule.GetComponent<PowerDownScript>().fasterBall)
         {
             gameObject.GetComponent<MaintainEnergy>().kinematicEnergyLevel = 20;
