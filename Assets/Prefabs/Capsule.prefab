@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 136002451055416376}
   - component: {fileID: 23377197098168734}
   - component: {fileID: 114833468821110182}
+  - component: {fileID: 114896208349410358}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: destroy
@@ -98,6 +99,21 @@ MonoBehaviour:
   fasterBall: 0
   smallerBall: 0
   destroyBall: 0
+--- !u!114 &114896208349410358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000126414914856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47603ab0508b55045b98c708b50f9cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: b5e60597bad83f54cae1e035edc2de26, type: 2}
+  - {fileID: 2100000, guid: 1be9c00b9cbe1634789ef7ce9cc53038, type: 2}
+  - {fileID: 2100000, guid: d88dc53659fd68a4b89a85ff422be169, type: 2}
 --- !u!136 &136002451055416376
 CapsuleCollider:
   m_ObjectHideFlags: 1

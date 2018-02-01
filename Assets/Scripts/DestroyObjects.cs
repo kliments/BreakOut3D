@@ -86,6 +86,7 @@ public class DestroyObjects : MonoBehaviour {
         {
             GameObject secondBall = Instantiate(ball, gameObject.transform.position,Quaternion.identity);
             secondBall.name = "SecondBall";
+            secondBall.tag = "Ball";
             secondBall.GetComponent<AddForce>().trigger = true;
             Destroy(secondBall, 5f);
         }
@@ -102,7 +103,7 @@ public class DestroyObjects : MonoBehaviour {
         source.Play();
         if (capsule.GetComponent<PowerDownScript>().fasterBall)
         {
-            gameObject.GetComponent<MaintainEnergy>().kinematicEnergyLevel = 20;
+            gameObject.GetComponent<MaintainEnergy>().kinematicEnergyLevel = 10;
             Invoke("SpeedBackToNormal", 5f);
         }
         else if (capsule.GetComponent<PowerDownScript>().smallerBall)

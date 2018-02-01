@@ -13,7 +13,7 @@ public class GenerateObjects : MonoBehaviour {
         posX = 0.5f;
 		for(int i=0; i<10; i++)
         {
-            j = Random.Range(0, 3);
+            j = (int)Random.Range(0, 3.9f);
             GameObject obj = Instantiate(prefab[j], gameObject.transform.parent);
             pos = gameObject.transform.position;
             pos.x += posX;
