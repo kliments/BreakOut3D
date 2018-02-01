@@ -1300,6 +1300,11 @@ Prefab:
       propertyPath: forceMagnitude
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 114343726751658636, guid: 33b2b6ec491146047b84685fee80f0be,
+        type: 2}
+      propertyPath: listParent
+      value: 
+      objectReference: {fileID: 232327283}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33b2b6ec491146047b84685fee80f0be, type: 2}
   m_IsPrefabParent: 0

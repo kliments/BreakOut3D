@@ -15,7 +15,6 @@ public class GenerateObjects : MonoBehaviour {
         {
             j = Random.Range(0, 3);
             GameObject obj = Instantiate(prefab[j], gameObject.transform.parent);
-            obj.name = prefab[j].name + i.ToString();
             pos = gameObject.transform.position;
             pos.x += posX;
             posX += 0.5f;

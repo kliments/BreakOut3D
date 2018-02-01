@@ -7,7 +7,7 @@ public class EndOfGame : MonoBehaviour {
     private int random;
 	// Use this for initialization
 	void Start () {
-        Invoke("Delay", 2);
+        Invoke("Delay", 1);
 	}
 	
 	// Update is called once per frame

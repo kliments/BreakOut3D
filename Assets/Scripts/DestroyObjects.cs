@@ -7,6 +7,7 @@ public class DestroyObjects : MonoBehaviour {
     public GameObject points;
     public GameObject lives;
     public GameObject ball;
+    public GameObject listParent;
     private GameObject temp;
     private Vector3 position, scale;
     
@@ -19,8 +20,8 @@ public class DestroyObjects : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -37,7 +38,7 @@ public class DestroyObjects : MonoBehaviour {
             }
             points.GetComponent<UpdatePointsAndLives>().points += 10;
             points.GetComponent<UpdatePointsAndLives>().update = true;
-            Destroy(collision.gameObject);
+            DestroyGameObject(collision.gameObject);
 
         }
     }
@@ -55,7 +56,7 @@ public class DestroyObjects : MonoBehaviour {
         }
         else if(collider.gameObject.name.Contains("Cylinder"))
         {
-            Destroy(collider.gameObject);
+            DestroyGameObject(collider.gameObject);
         }
     }
 
@@ -104,5 +105,18 @@ public class DestroyObjects : MonoBehaviour {
     private void SpeedBackToNormal()
     {
         gameObject.GetComponent<MaintainEnergy>().kinematicEnergyLevel = 5;
+    }
+
+    private void DestroyGameObject(GameObject obj)
+    {
+        
+        for(int i=0; i<listParent.GetComponent<EndOfGame>().list.Count; i++)
+        {
+            if(obj.GetInstanceID() == listParent.GetComponent<EndOfGame>().list[i].GetInstanceID())
+            {
+                listParent.GetComponent<EndOfGame>().list.RemoveAt(i);
+            }
+        }
+        Destroy(obj);
     }
 }
