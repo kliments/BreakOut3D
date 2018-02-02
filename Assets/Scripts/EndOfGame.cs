@@ -12,7 +12,7 @@ public class EndOfGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.K))
+		if(Input.GetMouseButtonDown(1))
         {
             random = Random.Range(0, transform.childCount);
             if(list[random]!=null)
