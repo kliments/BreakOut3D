@@ -8,6 +8,7 @@ public class DestroyObjects : MonoBehaviour {
     public GameObject lives;
     public GameObject ball;
     public GameObject listParent;
+    public GameObject partEffect;
     private GameObject temp;
     private Vector3 position, scale;
 
@@ -60,16 +61,18 @@ public class DestroyObjects : MonoBehaviour {
             {
                 source.Play();
             }
-            gameObject.GetComponent<ParticleSystem>().Play();
+            GameObject effect = Instantiate(partEffect, transform.position, transform.rotation);
+            Destroy(effect, 0.2f);
         }
 
         else if(collision.gameObject.name == "SquarePaddle")
         {
-            gameObject.GetComponent<ParticleSystem>().Play();
+            GameObject effect = Instantiate(partEffect, transform.position, transform.rotation);
+            Destroy(effect, 0.2f);
         }
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerExit(Collider collider)
     {
         if (collider.gameObject.name == "GameOverWall" && temp == null && gameObject.name == "Ball")
         {

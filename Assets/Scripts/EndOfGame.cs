@@ -22,7 +22,7 @@ public class EndOfGame : MonoBehaviour {
             }
         }
 
-        if(transform.childCount == 0)
+        if(transform.childCount == 0 || Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
             Debug.Log("End Of Game!!!");
