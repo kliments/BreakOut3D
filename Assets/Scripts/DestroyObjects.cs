@@ -119,6 +119,7 @@ public class DestroyObjects : MonoBehaviour {
         {
             temp = Instantiate(ball, position, Quaternion.identity);
             temp.name = "Ball";
+            temp.GetComponent<AddForce>().trigger = false;
             temp.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             lives.GetComponent<UpdatePointsAndLives>().lives--;
             lives.GetComponent<UpdatePointsAndLives>().update = true;

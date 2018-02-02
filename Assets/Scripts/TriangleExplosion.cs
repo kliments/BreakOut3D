@@ -52,7 +52,6 @@ public class TriangleExplosion : MonoBehaviour {
         Vector2[] uvs = M.uv;
         for (int submesh = 0; submesh < M.subMeshCount; submesh++)
         {
-            Debug.Log(gameObject.name);
             int[] indices = M.GetTriangles(submesh);
 
             for (int i = 0; i < 8; i += 3)

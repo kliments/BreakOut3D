@@ -16,6 +16,7 @@ public class AddForce : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        trigger = false;
         body = GetComponent<Rigidbody>();
     }
 
@@ -26,13 +27,19 @@ public class AddForce : MonoBehaviour
         {
             transform.parent = null;
             trigger = true;
-            GetComponent<ForceMovement>().enabled = true;
         }
 
         if (trigger)
         {
             trigger = false;
             body.AddForce(forceMagnitude * forceVector);
+            gameObject.GetComponent<TrailRenderer>().enabled = true;
+            GetComponent<ForceMovement>().isMoving = true;
+        }
+
+        if(gameObject.name == "SecondBall" && !GetComponent<ForceMovement>().isMoving)
+        {
+            trigger = true;
         }
     }
 }
