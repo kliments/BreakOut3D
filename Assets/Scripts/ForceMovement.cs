@@ -18,7 +18,7 @@ public class ForceMovement : MonoBehaviour {
     {
         shiftPosition = planeParent.transform.position;
         shiftPosition.z += 0.173f;
-        oldPos = newPos;
+        /*oldPos = newPos;
         newPos = transform.position;
 		if((oldPos.x == newPos.x && oldPos.y == newPos.y && isMoving) 
             || (oldPos.x == newPos.x && oldPos.z == newPos.z && isMoving)
@@ -26,7 +26,7 @@ public class ForceMovement : MonoBehaviour {
         {
             gameObject.GetComponent<Rigidbody>().AddForce(50f * new Vector3(1,1,1));
         }
-
+        */
         if(!isMoving && gameObject.name=="Ball")
         {
             transform.position = shiftPosition;
