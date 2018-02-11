@@ -699,7 +699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
-  lives: 5
+  lives: 10
   update: 1
 --- !u!1 &410767183 stripped
 GameObject:
@@ -1386,7 +1386,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1283338189999584, guid: 67f640d80b0658446bf308184702ab5c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198778817427958584, guid: 67f640d80b0658446bf308184702ab5c,
         type: 2}
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
-  lives: 5
+  lives: 10
   update: 1
 --- !u!1 &899455292
 GameObject:
